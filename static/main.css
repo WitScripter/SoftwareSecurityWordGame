@@ -1,0 +1,72 @@
+div[data-testid="textInputRootElement"] {}
+
+.css-pxxe24 {
+    visibility: hidden;
+}
+
+
+div[data-testid="textInputRootElement"] input[type="text"] {}
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    gap: 5px
+}
+
+.letter {
+    border: 1px solid pink;
+    width: 50px;
+    height: 50px;
+    border-radius: 7px;
+
+}
+
+.filledLetter {
+    border: 1px solid whitesmoke;
+    background-color: green;
+    color:white;
+    font-size: 25px;
+    text-align:center;
+    font-weight: 600;
+    padding-top: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 7px;
+
+}
+
+.reject {
+    border: 1px solid whitesmoke;
+    background-color: red;
+    color:white;
+    font-size: 25px;
+    text-align:center;
+    font-weight: 600;
+    padding-top: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 7px;
+
+}
+
+.clue 
+{
+    background-color: pink; 
+    color: #1F2667; 
+    padding:10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    border-radius: 10px;
+}
+
+.letterWordBreak{
+    width: 50px;
+    height: 50px;
+}
+
+.space {
+    width: 50px;
+    height: 50px;
+    border-radius: 7px;
+}
