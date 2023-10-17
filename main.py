@@ -124,12 +124,12 @@ def findAndPopulateChar(s, guessStr, result,rejectResult,remainingAttempts):
             st.session_state.remainingAttempts = st.session_state.remainingAttempts-1
             for index, letter in enumerate(rejectResult):
                 if letter==' ':
-                    rejectResult[index]=c   
+                    rejectResult[index]=c.upper()  
                     break
             
         # Populate results in correct spots   
         for i  in positions:
-         result[i]= c
+         result[i]= c.upper()
 
 def evalGuess():
    findAndPopulateChar(list(guessWord),st.session_state.guess, result,rejectResult, remainingAttempts)
