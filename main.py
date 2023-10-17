@@ -85,6 +85,7 @@ st.title('Software Security Word Game')
 
 if 'guessWord' not in st.session_state:
  randomItem= generateNewGuessWord()
+ st.session_state.status="IN-PROGRESS"
  st.session_state["guessWord"]=list(randomItem["name"]) 
  st.session_state["clue"]= randomItem["clue"]
  st.session_state["url"]= randomItem["link"]
@@ -110,6 +111,8 @@ if 'result' not in st.session_state:
 
 result=st.session_state.result  # Stores accepted letters with `~`(spaces) filled in
 rejectResult=st.session_state.rejectResult # Stores rejected letters `~` (spaces) filled in
+status=st.session_state.status
+
 
 
 
@@ -118,7 +121,7 @@ def findAndPopulateChar(s, guessStr, result,rejectResult,remainingAttempts):
         positions=[pos for pos, char in enumerate(s) if char.lower() == c.lower()] # find positions in which this char exists
 
         if  len(positions) ==0 and c not in rejectResult : # add the reject leter to a empty spot by scanning left to right (avoid ~). Just so it looks aligned
-            st.session_state.remainingAttempts = remainingAttempts-1
+            st.session_state.remainingAttempts = st.session_state.remainingAttempts-1
             for index, letter in enumerate(rejectResult):
                 if letter==' ':
                     rejectResult[index]=c   
@@ -132,6 +135,14 @@ def evalGuess():
    findAndPopulateChar(list(guessWord),st.session_state.guess, result,rejectResult, remainingAttempts)
    
 
+def updateStatus(result):
+   positions=[pos for pos, char in enumerate(result) if char == ' '] # find unfilled positions 
+   if  len(positions) ==0:
+      st.session_state.status="SUCCESS"
+
+   
+
+
 game_col, details_col = st.columns([50,50])
 
 with game_col:
@@ -139,9 +150,16 @@ with game_col:
     guess= st.text_input(label="Enter your guess here. One or more letters" , max_chars=remainingAttempts, key="guess" , on_change=evalGuess)
     renderGame(result)
     renderRejectedList(rejectResult)
-    st.metric("Remaining Attempts", remainingAttempts)
-    
+    updateStatus(result)
+   
 
 with details_col:
-   pass
-    #st.markdown("<iframe src='https://en.wikipedia.org/wiki/Phishing' width='100%' height='100vh' > </iframe>", unsafe_allow_html=True)
+   if st.session_state.status=="SUCCESS":
+    st.markdown(f"<iframe src='{st.session_state.url}' width='100%' height='100vh' > </iframe>", unsafe_allow_html=True)
+
+
+if st.session_state.status=="SUCCESS":
+       st.button("Play Again")
+       st.balloons()
+else:
+    st.metric("Remaining Attempts", remainingAttempts)

@@ -56,6 +56,7 @@ div[data-testid="textInputRootElement"] input[type="text"] {}
     background-color: pink; 
     color: #1F2667; 
     padding:10px;
+    margin-bottom:10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
     border-radius: 10px;
 }

@@ -12,7 +12,7 @@
       },
       {
         "name": "Buffer Overflow",
-        "clue": "A programming error that occurs when a program writes more data to a buffer than it can handle, potentially leading to code execution.",
+        "clue": "In this attack the attacker alters the application’s execution path and overwrites elements of its memory, which amends the program’s execution path to damage existing files or expose data.",
         "link": "https://en.wikipedia.org/wiki/Buffer_overflow"
       },
       {
@@ -31,24 +31,24 @@
         "link": "https://en.wikipedia.org/wiki/Man-in-the-middle_attack"
       },
       {
-        "name": "Insecure Deserialization",
-        "clue": "A vulnerability where an application processes untrusted data during deserialization, leading to remote code execution or other attacks.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Insecure_Deserialization"
+        "name": "Arbitrary code execution",
+        "clue": "This is an attacker's ability to run any commands or code of the attacker's choice on a target machine or in a target process",
+        "link": "https://en.wikipedia.org/wiki/Arbitrary_code_execution"
       },
       {
         "name": "XXE Injection",
         "clue": "A vulnerability that allows an attacker to exploit insecure XML parsers to disclose internal files, execute remote requests, or launch a DoS attack.",
-        "link": "https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing"
+        "link": "https://en.wikipedia.org/wiki/XML_external_entity_attack"
       },
       {
         "name": "Server Side Request Forgery",
         "clue": "A vulnerability that enables attackers to make unauthorized requests from a vulnerable server, potentially accessing internal resources or services.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Server-Side_Request_Forgery"
+        "link": "https://en.wikipedia.org/wiki/Server-side_request_forgery"
       },
       {
         "name": "Path Traversal",
         "clue": "A vulnerability that allows attackers to access files and directories outside the intended directory, potentially disclosing sensitive information.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Path_Traversal"
+        "link": "https://en.wikipedia.org/wiki/Directory_traversal_attack"
       },
       {
         "name": "Information Disclosure",
@@ -63,7 +63,7 @@
       {
         "name": "Session Fixation",
         "clue": "An attack where an attacker sets a user's session identifier to a known value, potentially allowing unauthorized access to the user's account.",
-        "link": "https://owasp.org/www-community/attacks/Session_Fixation"
+        "link": "https://en.wikipedia.org/wiki/Session_fixation"
       },
       {
         "name": "Unvalidated Redirects and Forwards",
@@ -157,7 +157,7 @@
       },
       {
         "name": "Insecure APIs",
-        "clue": "A vulnerability related to the exposure of insecure application programming interfaces, which can be exploited to gain unauthorized access or perform actions.",
+        "clue": "A vulnerability related to the exposure of insecure  programming interfaces, which can be exploited to gain unauthorized access or perform actions.",
         "link": "https://owasp.org/www-community/vulnerabilities/Insecure_API"
       },
       {
