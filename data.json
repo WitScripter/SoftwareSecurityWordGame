@@ -17,11 +17,11 @@
       },
       {
         "name": "Remote Code Execution",
-        "clue": "A vulnerability that allows an attacker to execute arbitrary code on a remote system, potentially taking control of it.",
+        "clue": "An vulnerability in which an attacker is able to run any commands or code of the their choice on a target machine or in a target process.",
         "link": "https://en.wikipedia.org/wiki/Arbitrary_code_execution"
       },
       {
-        "name": "Denial of Service (DoS)",
+        "name": "Denial of Service",
         "clue": "An attack that aims to overwhelm a system, network, or service to render it unavailable to users.",
         "link": "https://en.wikipedia.org/wiki/Denial-of-service_attack"
       },
@@ -51,11 +51,6 @@
         "link": "https://en.wikipedia.org/wiki/Directory_traversal_attack"
       },
       {
-        "name": "Information Disclosure",
-        "clue": "A vulnerability that exposes sensitive information, such as configuration details, error messages, or other data, to unauthorized users.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Information_Disclosure"
-      },
-      {
         "name": "Clickjacking",
         "clue": "An attack where a malicious website or element is positioned over a legitimate site to trick users into clicking on something different from what they see.",
         "link": "https://en.wikipedia.org/wiki/Clickjacking"
@@ -66,74 +61,9 @@
         "link": "https://en.wikipedia.org/wiki/Session_fixation"
       },
       {
-        "name": "Unvalidated Redirects and Forwards",
-        "clue": "A vulnerability that allows attackers to redirect users to malicious websites or forward them to unintended pages.",
-        "link": "https://owasp.org/www-community/attacks/Unvalidated_Redirects_and_Forwards"
-      },
-      {
-        "name": "Security Misconfiguration",
-        "clue": "A vulnerability resulting from insecure default settings, incomplete or ad-hoc configurations, and other weaknesses that can lead to unauthorized access or data exposure.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Security_Misconfiguration"
-      },
-      {
-        "name": "Insecure Cryptographic Storage",
-        "clue": "A vulnerability where sensitive data is not securely stored, making it susceptible to theft or exposure.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Insecure_Cryptographic_Storage"
-      },
-      {
-        "name": "Broken Authentication",
-        "clue": "A vulnerability where attackers can compromise user accounts by exploiting flaws in authentication mechanisms, such as session management or password policies.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Broken_Authentication"
-      },
-      {
-        "name": "Broken Access Control",
-        "clue": "A vulnerability that allows users to gain unauthorized access to functionality or data, such as other users' accounts or administrative features.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Broken_Access_Control"
-      },
-      {
-        "name": "Unvalidated Input",
-        "clue": "A vulnerability that occurs when an application does not properly validate input, enabling attackers to provide malicious data.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Unvalidated_Input"
-      },
-      {
-        "name": "Command Injection",
-        "clue": "A vulnerability that allows attackers to execute arbitrary commands on a host operating system by injecting malicious code into input fields or parameters.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Command_Injection"
-      },
-      {
-        "name": "Cross-Site Request Forgery (CSRF)",
-        "clue": "A vulnerability that tricks users into making unwanted actions on a different site without their consent, often altering settings or performing transactions.",
-        "link": "https://owasp.org/www-community/attacks/Cross-Site_Request_Forgery_(CSRF)"
-      },
-      {
-        "name": "Code Injection",
-        "clue": "A vulnerability where attackers inject malicious code into applications, often exploiting weaknesses in user input processing.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Code_Injection"
-      },
-      {
-        "name": "Insufficient Logging and Monitoring",
-        "clue": "A vulnerability where an application or system lacks proper logging and monitoring, making it difficult to detect and respond to security incidents.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Insufficient_Logging_and_Monitoring"
-      },
-      {
         "name": "Cryptographic Side Channel Attacks",
         "clue": "A class of vulnerabilities where attackers exploit information leaked by cryptographic implementations, such as timing or power consumption.",
         "link": "https://en.wikipedia.org/wiki/Side-channel_attack"
-      },
-      {
-        "name": "Content Spoofing",
-        "clue": "A vulnerability that allows attackers to present false or misleading information to users, often to trick them into taking malicious actions.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Content_Spoofing"
-      },
-      {
-        "name": "Session Management Vulnerabilities",
-        "clue": "A category of vulnerabilities related to the handling of user sessions, including session fixation, session hijacking, and session theft.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Session_Management_Vulnerabilities"
-      },
-      {
-        "name": "Cross-Site Script Inclusion (XSSI)",
-        "clue": "A vulnerability that allows attackers to include external scripts in a web page, potentially leading to information disclosure or other attacks.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Cross-Site_Script_Inclusion"
       },
       {
         "name": "Race Conditions",
@@ -146,24 +76,9 @@
         "link": "https://en.wikipedia.org/wiki/Zero-day_(computing)"
       },
       {
-        "name": "Insecure Mobile App Development",
-        "clue": "A vulnerability stemming from the improper development of mobile applications, which can lead to unauthorized access or data leakage.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Insecure_Mobile_App_Development"
-      },
-      {
         "name": "Brute Force Attack",
         "clue": "An attack where an attacker systematically tries all possible combinations to guess a user's password or encryption key.",
         "link": "https://en.wikipedia.org/wiki/Brute-force_attack"
-      },
-      {
-        "name": "Insecure APIs",
-        "clue": "A vulnerability related to the exposure of insecure  programming interfaces, which can be exploited to gain unauthorized access or perform actions.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Insecure_API"
-      },
-      {
-        "name": "Logical Flaws",
-        "clue": "Vulnerabilities arising from incorrect or incomplete logic in an application, potentially allowing attackers to bypass security measures.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Logic_Flaws"
       },
       {
         "name": "Data Breach",
@@ -179,36 +94,6 @@
         "name": "Supply Chain Attacks",
         "clue": "Attacks that target the software supply chain, compromising the integrity of software or hardware components before they reach the end user.",
         "link": "https://en.wikipedia.org/wiki/Supply_chain_attack"
-      },
-      {
-        "name": "Wireless Network Vulnerabilities",
-        "clue": "Vulnerabilities in wireless network protocols and technologies, allowing attackers to intercept or manipulate wireless communications.",
-        "link": "https://en.wikipedia.org/wiki/Wireless_security"
-      },
-      {
-        "name": "File Inclusion Vulnerability",
-        "clue": "A vulnerability where an attacker can include files on a web server through the web application, potentially revealing sensitive data or executing malicious code.",
-        "link": "https://owasp.org/www-community/attacks/File_Inclusion"
-      },
-      {
-        "name": "Broken Object Level Authorization",
-        "clue": "A vulnerability where attackers manipulate object references to gain unauthorized access to data or functionality in an application.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Broken_Object_Level_Authorization"
-      },
-      {
-        "name": "HTML Injection",
-        "clue": "A vulnerability that allows attackers to inject malicious HTML code into a web application, often leading to information disclosure or phishing attacks.",
-        "link": "https://owasp.org/www-community/vulnerabilities/HTML_Injection"
-      },
-      {
-        "name": "DOM Based XSS",
-        "clue": "A variation of Cross-Site Scripting that occurs in the Document Object Model (DOM) of a web page, allowing attackers to manipulate client-side scripts.",
-        "link": "https://owasp.org/www-community/attacks/DOM-based_XSS"
-      },
-      {
-        "name": "Session Identifier Disclosure",
-        "clue": "A vulnerability where session identifiers are exposed in URLs or other locations, potentially allowing attackers to hijack user sessions.",
-        "link": "https://owasp.org/www-community/vulnerabilities/Session_Identifier_Disclosure"
       },
       {
         "name": "Software Composition",

@@ -4,8 +4,20 @@ div[data-testid="textInputRootElement"] {}
     visibility: hidden;
 }
 
+div[data-testid="stAppViewContainer"] div[data-testid="block-container"]   {
+    padding: 1rem 1rem 10rem
+}
 
-div[data-testid="textInputRootElement"] input[type="text"] {}
+div[data-testid="stHorizontalBlock"]  div[data-testid="column"]  {
+    height:80vh
+}
+
+
+button[data-testid="baseButton-primary"]  p{
+    font-size: 25px;
+}
+
+
 
 
 .container {

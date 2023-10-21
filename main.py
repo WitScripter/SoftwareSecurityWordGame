@@ -4,7 +4,8 @@ import random
 st.set_page_config(layout="wide")
 
 fa_css = '''
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">                                                                                                    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">      
+                                                                                              
 '''
 
 st.write(fa_css, unsafe_allow_html=True)
@@ -117,19 +118,19 @@ status=st.session_state.status
 
 
 def findAndPopulateChar(s, guessStr, result,rejectResult,remainingAttempts):
-    for i, c in enumerate(guessStr):
-        positions=[pos for pos, char in enumerate(s) if char.lower() == c.lower()] # find positions in which this char exists
+    for i, c in enumerate(guessStr.replace(" ", "")):  # get rid of any typed whitespace
+         positions=[pos for pos, char in enumerate(s) if char.lower() == c.lower()] # find positions in which this char exists
 
-        if  len(positions) ==0 and c not in rejectResult : # add the reject leter to a empty spot by scanning left to right (avoid ~). Just so it looks aligned
-            st.session_state.remainingAttempts = st.session_state.remainingAttempts-1
+         if  len(positions) ==0 and c.lower() not in ''.join(rejectResult).lower() : # Convert list to string and do case insensitive lookup for char 
             for index, letter in enumerate(rejectResult):
-                if letter==' ':
+                if letter==' ': # add the reject leter to a empty spot by scanning left to right (avoid ~). Just so it looks aligned
                     rejectResult[index]=c.upper()  
+                    st.session_state.remainingAttempts = st.session_state.remainingAttempts-1
                     break
             
         # Populate results in correct spots   
-        for i  in positions:
-         result[i]= c.upper()
+         for i  in positions:
+          result[i]= c.upper()
 
 def evalGuess():
    findAndPopulateChar(list(guessWord),st.session_state.guess, result,rejectResult, remainingAttempts)
@@ -140,7 +141,10 @@ def updateStatus(result):
    if  len(positions) ==0:
       st.session_state.status="SUCCESS"
 
-   
+def clear_state():
+    keys = list(st.session_state.keys())
+    for key in keys:
+        st.session_state.pop(key)  
 
 
 game_col, details_col = st.columns([50,50])
@@ -151,15 +155,17 @@ with game_col:
     renderGame(result)
     renderRejectedList(rejectResult)
     updateStatus(result)
+    if st.session_state.status=="SUCCESS":
+       st.write("##")
+       #st.markdown("<div><i class='fa-solid fa-frog fa-bounce></i></div>", unsafe_allow_html=True)
+       st.button("Play Again", on_click=clear_state, type="primary")
+       st.balloons()
+    else:
+        st.metric("Remaining Attempts", remainingAttempts)
    
 
 with details_col:
    if st.session_state.status=="SUCCESS":
-    st.markdown(f"<iframe src='{st.session_state.url}' width='100%' height='100vh' > </iframe>", unsafe_allow_html=True)
+    st.markdown(f"<iframe src='{st.session_state.url}' width='100%' height='700px' > </iframe>", unsafe_allow_html=True)
 
 
-if st.session_state.status=="SUCCESS":
-       st.button("Play Again")
-       st.balloons()
-else:
-    st.metric("Remaining Attempts", remainingAttempts)
